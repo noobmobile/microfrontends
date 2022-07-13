@@ -1,0 +1,41 @@
+<single-spa-router>
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+  <style>
+    .mfe {
+      width: 45%;
+      border: 2px solid black;
+      padding: 10px;
+      box-shadow: 0 0 5px #999;
+      position: relative;
+    }
+  </style>
+  <main>
+    <route default>
+      <div style="padding: 10px;display: flex; justify-content: space-evenly;">
+        <section class="mfe">
+          <application name="@lead/mfeworkflow"></application>
+          <!-- trocar o microfrontend acima pelo workflow e adicionar no importmap -->
+        </section>
+        <section class="mfe">
+          <application name="@lead/pagebuildermfe"></application>
+        </section>
+      </div>
+    </route>
+  </main>
+</single-spa-router>
